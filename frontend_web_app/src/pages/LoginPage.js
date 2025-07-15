@@ -5,7 +5,7 @@ import { AuthContext } from "../App";
 
 // PUBLIC_INTERFACE
 /**
- * LoginPage: login form for user authentication
+ * LoginPage: login form for user authentication with modern/minimal UI and new theme colors
  */
 function LoginPage() {
   const { handleLogin } = React.useContext(AuthContext);
@@ -41,15 +41,24 @@ function LoginPage() {
   return (
     <div
       style={{
-        maxWidth: 320,
-        margin: "7vh auto",
-        background: "var(--bg-secondary)",
-        borderRadius: 8,
-        padding: 32,
-        boxShadow: "0 4px 32px 0 #0001",
+        maxWidth: 340,
+        margin: "8vh auto",
+        background: "var(--card-bg)",
+        borderRadius: 10,
+        padding: 36,
+        boxShadow: "var(--card-shadow)",
+        textAlign: "left",
       }}
     >
-      <h2 style={{ marginBottom: 32 }}>Sign In</h2>
+      <h2 style={{
+        marginBottom: 34,
+        color: "var(--primary)",
+        fontWeight: 800,
+        letterSpacing: ".01em",
+        fontSize: "1.7em"
+      }}>
+        Sign In
+      </h2>
       <form onSubmit={onSubmit}>
         <input
           name="username"
@@ -62,10 +71,15 @@ function LoginPage() {
             width: "100%",
             marginBottom: 16,
             padding: 10,
-            borderRadius: 4,
-            border: "1px solid var(--border-color)",
+            borderRadius: 5,
+            border: "1.2px solid var(--border-color)",
             fontSize: 15,
+            background: "var(--input-bg)",
+            transition: "border 0.18s",
+            outline: "none",
           }}
+          onFocus={e => (e.target.style.border = "1.5px solid var(--accent)")}
+          onBlur={e => (e.target.style.border = "1.2px solid var(--border-color)")}
         />
         <input
           name="password"
@@ -76,33 +90,43 @@ function LoginPage() {
           required
           style={{
             width: "100%",
-            marginBottom: 20,
+            marginBottom: 22,
             padding: 10,
-            borderRadius: 4,
-            border: "1px solid var(--border-color)",
+            borderRadius: 5,
+            border: "1.2px solid var(--border-color)",
             fontSize: 15,
+            background: "var(--input-bg)",
+            transition: "border 0.18s",
+            outline: "none",
           }}
+          onFocus={e => (e.target.style.border = "1.5px solid var(--accent)")}
+          onBlur={e => (e.target.style.border = "1.2px solid var(--border-color)")}
         />
         <button
           type="submit"
           disabled={loading}
           style={{
             width: "100%",
-            padding: "10px 0",
+            padding: "11px 0",
             background: "var(--button-bg)",
             color: "var(--button-text)",
             border: "none",
-            borderRadius: 6,
-            fontWeight: 600,
-            fontSize: 16,
-            marginBottom: 10,
+            borderRadius: 7,
+            fontWeight: 700,
+            fontSize: 16.2,
+            marginBottom: 15,
             cursor: loading ? "not-allowed" : "pointer",
+            boxShadow: "0 1px 4px #1d834822",
+            transition: "background .13s",
+            letterSpacing: ".01em"
           }}
+          onMouseOver={e => (e.target.style.background = "var(--button-hover-bg)")}
+          onMouseOut={e => (e.target.style.background = "var(--button-bg)")}
         >
           {loading ? "Signing in..." : "Sign In"}
         </button>
         <div style={{ fontSize: 13, marginTop: 10 }}>
-          Don't have an account? <Link to="/register">Register</Link>
+          Don't have an account? <Link style={{ color: "var(--primary)", fontWeight: 600 }} to="/register">Register</Link>
         </div>
         {error && (
           <div style={{ color: "red", fontSize: 14, marginTop: 14, textAlign: "center" }}>

@@ -1,13 +1,72 @@
 /* CSS Variables for Theme Management */
 :root {
-  /* Light theme colors */
+  /* --- Light theme colors using app's desired palette --- */
+  --primary: #1d8348;
+  --secondary: #154360;
+  --accent: #f9e79f;
+
   --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #282c34;
-  --text-secondary: #61dafb;
-  --border-color: #e9ecef;
-  --button-bg: #007bff;
-  --button-text: #ffffff;
+  --bg-secondary: #f2f4f5;
+  --sidebar-bg: var(--secondary);
+  --sidebar-text: #fff;
+  --sidebar-active-bg: #e8efe7;
+  --app-bar-bg: var(--primary);
+
+  --text-primary: #1a1a1a;
+  --text-secondary: #666e7a;
+  --text-link: var(--primary);
+
+  --border-color: #e1e4e8;
+
+  --button-bg: var(--primary);
+  --button-hover-bg: #146435;
+  --button-text: #fff;
+
+  --card-bg: #fff;
+  --card-shadow: 0 4px 14px 0 rgba(34, 56, 80, 0.07);
+
+  --accent-bg: var(--accent);
+  --accent-text: #222;
+
+  --input-bg: #f8faf9;
+  --input-border: #d3dad7;
+
+  --icon-color: var(--primary);
+}
+
+[data-theme="dark"] {
+  /* --- Dark theme colors --- */
+  --primary: #1d8348;
+  --secondary: #154360;
+  --accent: #f9e79f;
+
+  --bg-primary: #181b20;
+  --bg-secondary: #23272f;
+  --sidebar-bg: #19243a;
+  --sidebar-text: #e2e6ed;
+  --sidebar-active-bg: #253052;
+  --app-bar-bg: #193c2a;
+
+  --text-primary: #f6f8fa;
+  --text-secondary: #bec0c5;
+  --text-link: var(--accent);
+
+  --border-color: #353d4e;
+
+  --button-bg: var(--primary);
+  --button-hover-bg: #146435;
+  --button-text: #fff;
+
+  --card-bg: #23272f;
+  --card-shadow: 0 2px 8px 0 rgba(10,16,22,0.19);
+
+  --accent-bg: var(--accent);
+  --accent-text: #15171a;
+
+  --input-bg: #23272f;
+  --input-border: #353d4e;
+
+  --icon-color: var(--accent);
 }
 
 [data-theme="dark"] {
